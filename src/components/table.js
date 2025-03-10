@@ -27,6 +27,11 @@ function PatientTable() {
           <tr>
             <th>DNI</th>
             <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Localidad</th>
+            <th>Código Postal</th>
+            <th>Teléfono</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -34,7 +39,12 @@ function PatientTable() {
           {patients.map(p => (
             <tr key={p.dni}>
               <td>{p.dni}</td>
-              <td>{p.nombre} {p.apellidos}</td>
+              <td>{p.nombre}</td>
+              <td>{p.apellidos}</td>
+              <td>{p.direccion}</td>
+              <td>{p.localidad}</td>
+              <td>{p.codigoPostal}</td>
+              <td>{p.telefono}</td>
               <td>
                 <Link to={`/modify/${p.dni}`}>Modificar</Link>
                 <DeleteButton onDelete={() => handleDelete(p.dni)} />
